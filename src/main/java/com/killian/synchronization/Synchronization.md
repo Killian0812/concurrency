@@ -5,3 +5,7 @@ Threads communicate primarily by sharing access to fields and the objects refere
 
 A simple **strategy for preventing** thread interference and memory consistency errors: if an object *is visible to more than one thread*, all reads or writes to that object's variables are done through **synchronized** methods (Exception: final fields).
 This strategy is effective, but can present problems with liveness.
+
+### Locks In Synchronized Methods
+When a thread invokes a synchronized method, it automatically acquires the **intrinsic lock** for that method's object and releases it when the method returns. The lock release occurs even if the return was caused by an uncaught exception.
+When a static synchronized method is invoked, the thread acquires the intrinsic lock for the *Class object* associated with the class. Thus access to class's static fields is controlled by a lock that's distinct from the lock for any instance of the class.
