@@ -1,9 +1,11 @@
 com\killian\Main.class
 com\killian\synchronization\InterferenceExample.class
-com\killian\synchronization\Counter.class
 com\killian\thread\ThreadExample.class
 com\killian\thread\PatienceThread.class
+com\killian\synchronization\counter\BasicCounter.class
+com\killian\synchronization\counter\SynchronizedCounter.class
 com\killian\thread\PatienceThread$MessageLoop.class
 com\killian\thread\JoinExample.class
 com\killian\thread\RunnableExample.class
 com\killian\thread\SleepAndInterruptExample.class
+com\killian\synchronization\counter\Counter.class

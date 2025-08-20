@@ -1,43 +1,12 @@
 package com.killian.synchronization;
 
+import com.killian.synchronization.counter.BasicCounter;
+import com.killian.synchronization.counter.Counter;
+import com.killian.synchronization.counter.SynchronizedCounter;
+
 @SuppressWarnings("CallToPrintStackTrace")
 public class InterferenceExample {
-
-    private static interface CounterInterface {
-        void increment();
-
-        int value();
-    }
-
-    private static class Counter implements CounterInterface {
-        private int c = 0;
-
-        @Override
-        public void increment() {
-            c++;
-        }
-
-        @Override
-        public int value() {
-            return c;
-        }
-    }
-
-    private static class SyncCounter implements CounterInterface {
-        private int c = 0;
-
-        @Override
-        public synchronized void increment() {
-            c++;
-        }
-
-        @Override
-        public synchronized int value() {
-            return c;
-        }
-    }
-
-    private static void interferenceCounter(CounterInterface counter) {
+    private static void interferenceCounter(Counter counter) {
         Thread thread1 = new Thread(() -> {
             for (int i = 0; i < 10000000; i++) {
                 counter.increment();
@@ -66,12 +35,9 @@ public class InterferenceExample {
     }
 
     public static void main(String[] args) {
-        Counter counter = new Counter();
-        SyncCounter syncCounter = new SyncCounter();
-
         System.out.println("Counter without synchronization:");
-        interferenceCounter(counter);
+        interferenceCounter(new BasicCounter());
         System.out.println("Counter with synchronization:");
-        interferenceCounter(syncCounter);
+        interferenceCounter(new SynchronizedCounter());
     }
 }

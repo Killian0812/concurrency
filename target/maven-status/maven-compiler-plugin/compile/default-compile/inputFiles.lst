@@ -1,5 +1,7 @@
 C:\Development\concurrency\src\main\java\com\killian\Main.java
-C:\Development\concurrency\src\main\java\com\killian\synchronization\Counter.java
+C:\Development\concurrency\src\main\java\com\killian\synchronization\counter\BasicCounter.java
+C:\Development\concurrency\src\main\java\com\killian\synchronization\counter\Counter.java
+C:\Development\concurrency\src\main\java\com\killian\synchronization\counter\SynchronizedCounter.java
 C:\Development\concurrency\src\main\java\com\killian\synchronization\InterferenceExample.java
 C:\Development\concurrency\src\main\java\com\killian\thread\JoinExample.java
 C:\Development\concurrency\src\main\java\com\killian\thread\PatienceThread.java
